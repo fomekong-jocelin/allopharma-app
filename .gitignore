@@ -1,34 +1,96 @@
-# Gradle files
-.gradle/
-build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
+# Miscellaneous
+*.class
 *.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.aab
-*.apk
-output-metadata.json
-
-# IntelliJ
+# IntelliJ related
 *.iml
+*.ipr
+*.iws
 .idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
 
-# Keystore files
+# The .vscode folder contains launch configurations and scripts you may want to
+# share with others. However, build outputs and settings (termed "The Workspace")
+# should not be shared.
+.vscode/
+
+# Flutter/Dart-related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+__pycache__/
+build/
+node_modules/
+package-lock.json
+
+# Android-related
+**/android/app/src/main/res/generated/
+**/android/app/src/main/res/values/strings.xml
+**/android/local.properties
+**/android/Flutter/generated.xcconfig
+**/android/Flutter/flutter_export_environment.sh
+**/android/Flutter/App.framework
+**/android/Flutter/Flutter.framework
+**/android/Flutter/Flutter.podspec
+**/android/key.properties
 *.jks
 *.keystore
+*.apk
+*.aab
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# iOS-related
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.framework
+**/ios/Flutter/App.framework
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.h
+**/ios/Runner/GeneratedPluginRegistrant.m
+**/ios/Pods/
+**/ios/.generated/
+Podfile.lock
 
-# Android Profiling
-*.hprof
+# macOS-related
+**/macos/Flutter/Generated.xcconfig
+**/macos/Flutter/ephemeral/
+**/macos/Runner/GeneratedPluginRegistrant.h
+**/macos/Runner/GeneratedPluginRegistrant.swift
+**/macos/Pods/
+
+# Linux-related
+**/linux/flutter/generated_plugins.cmake
+**/linux/flutter/generated_plugin_registrant.cc
+**/linux/flutter/generated_plugin_registrant.h
+
+# Windows-related
+**/windows/flutter/generated_plugins.cmake
+**/windows/flutter/generated_plugin_registrant.cc
+**/windows/flutter/generated_plugin_registrant.h
+**/windows/flutter/generated_plugin_registrant.cc
+**/windows/flutter/generated_plugin_registrant.h
+
+# Symbols
+app.*.symbols
+
+# Executables
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Coverage
+coverage/
