@@ -1,5 +1,6 @@
 import 'package:allopharma_app/core/providers.dart';
 import 'package:allopharma_app/models/signalement_model.dart';
+import 'package:allopharma_app/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -9,7 +10,6 @@ class PharmacistFeedScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signalementsAsync = ref.watch(signalementsProvider);
-    final user = ref.watch(currentUserProvider);
     final backend = ref.read(pharmacyResponseProvider);
 
     return Scaffold(

@@ -23,6 +23,14 @@ L'application est développée avec Flutter et suit une architecture modulaire :
 - **Modèles** : Freezed & JSON Serializable
 - **Mock Backend** : Une simulation en mémoire des services backend pour la démonstration du MVP.
 
+## Configuration Requise
+
+### Google Maps
+Pour utiliser les fonctionnalités de carte, vous devez configurer une clé API Google Maps :
+1. Obtenez une clé API sur la [Google Cloud Console](https://console.cloud.google.com/).
+2. Pour Android : Remplacez `YOUR_GOOGLE_MAPS_API_KEY_HERE` dans `android/app/src/main/AndroidManifest.xml`.
+3. Pour iOS : Configurez votre clé dans `ios/Runner/AppDelegate.swift`.
+
 ## Installation
 
 1. S'assurer d'avoir Flutter installé (`flutter doctor`).

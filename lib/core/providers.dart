@@ -1,7 +1,7 @@
 import 'package:allopharma_app/core/mock_backend.dart';
 import 'package:allopharma_app/models/signalement_model.dart';
 import 'package:allopharma_app/models/user_model.dart';
-import 'package:flutter_riverpod/hooks_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final currentUserProvider = StateProvider<UserModel?>((ref) => const UserModel(
       id: 'u1',

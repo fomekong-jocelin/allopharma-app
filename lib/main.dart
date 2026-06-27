@@ -3,21 +3,24 @@ import 'package:allopharma_app/core/router.dart';
 import 'package:allopharma_app/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = createRouter(() => const HomeScreen());
+
     return MaterialApp.router(
       title: 'AllôPharma',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF2E7D32), // AllôPharma Green
+          seedColor: const Color(0xFF2E7D32),
           primary: const Color(0xFF2E7D32),
         ),
         useMaterial3: true,
@@ -42,8 +45,6 @@ class HomeScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final user = ref.watch(currentUserProvider);
-
     return Scaffold(
       appBar: AppBar(title: const Text('AllôPharma')),
       body: Container(
@@ -75,7 +76,7 @@ class HomeScreen extends ConsumerWidget {
                   email: 'marie@example.com',
                   role: UserRole.patient,
                 );
-                router.push('/patient/new-signalement');
+                context.push('/patient/new-signalement');
               },
               icon: const Icon(Icons.person_search),
               label: const Padding(
@@ -92,7 +93,7 @@ class HomeScreen extends ConsumerWidget {
                   email: 'kamga@pharmacie.com',
                   role: UserRole.pharmacist,
                 );
-                router.push('/pharmacist/feed');
+                context.push('/pharmacist/feed');
               },
               icon: const Icon(Icons.local_pharmacy_outlined),
               label: const Padding(
