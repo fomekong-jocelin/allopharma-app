@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:allopharma_app/models/pharmacie_model.dart';
 import 'package:allopharma_app/models/signalement_model.dart';
-import 'package:allopharma_app/models/user_model.dart';
 
 class MockBackend {
   final List<SignalementModel> _signalements = [];
@@ -27,7 +26,13 @@ class MockBackend {
   final StreamController<List<SignalementModel>> _signalementController =
       StreamController<List<SignalementModel>>.broadcast();
 
-  Stream<List<SignalementModel>> get signalementsStream => _signalementController.stream;
+  Stream<List<SignalementModel>> get signalementsStream {
+    // Return a stream that starts with current data
+    final controller = StreamController<List<SignalementModel>>();
+    controller.add(List.from(_signalements));
+    controller.addStream(_signalementController.stream);
+    return controller.stream;
+  }
 
   List<SignalementModel> get currentSignalements => List.unmodifiable(_signalements);
 
